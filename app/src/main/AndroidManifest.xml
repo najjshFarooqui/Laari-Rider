@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.laari.rider">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".views.activity.RideDetailsActivity"></activity>
+        <activity android:name=".views.activity.FavouritePredectionActivity" />
+        <activity android:name=".views.activity.PlacePredictionActivity" />
+        <activity android:name=".views.activity.AboutUsActivity" />
+        <activity android:name=".views.activity.registration.AddPhotoActivity" />
+        <activity android:name=".views.activity.PaymentActivity" />
+        <activity android:name=".views.activity.RideHistoryActivity" />
+        <activity android:name=".views.activity.ScheduleRidesActivity" />
+        <activity android:name=".views.activity.ScheduledRideDetailsActivity" />
+        <activity android:name=".views.activity.PromosActivity" />
+        <activity android:name=".views.activity.NotificationActivity" />
+        <activity android:name=".views.activity.ReferFriendAcivity" />
+        <activity
+            android:name=".views.activity.WelcomeDriverActivity"
+            android:label="@string/title_activity_welcome_driver" />
+        <activity android:name=".views.activity.EditProfileActivity" />
+        <activity android:name=".views.activity.HomeDashboardActivity" />
+        <activity android:name=".views.activity.registration.PhoneAuthActivity" />
+        <activity android:name=".views.activity.registration.OTPVerificationActivity" />
+        <activity android:name=".views.activity.registration.RegistrationActivity" />
+        <activity android:name=".views.activity.registration.ReferralCodeActivity" />
+        <activity android:name=".views.activity.AddCardActivity" />
+        <activity android:name=".views.activity.MapsActivity" />
+        <activity android:name=".views.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".GenericFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service android:name=".services.LocationService" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBNIf1AoAvdrOaP0kcXP-xz_UqzKqGCAew" />
+    </application>
+
+</manifest>

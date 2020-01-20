@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="rideOption"
+            type="int" />
+
+        <variable
+            name="handler"
+            type="com.laari.rider.views.activity.RideOptionsInterface" />
+
+        <variable
+            name="baseHandler"
+            type="com.laari.rider.HomeBaseInterface" />
+
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:openDrawer="start">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.mevron.driver.views.activity.HomeActivity">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/ivMenu"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_menu_black_24dp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/mapsToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:visibility="gone"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/menuIv"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_menu_black_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@+id/menuIv"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp">
+
+                        <Button
+                            android:id="@+id/daily_rides"
+                            style="@style/setting_toggle_button"
+                            android:background="@{rideOption == 1 ? @drawable/bg_focused_ride_option : @drawable/bg_unfocused_ride_option}"
+                            android:gravity="center"
+                            android:onClick="@{() -> handler.toggleRideOption(1)}"
+                            android:text="@string/daily"
+
+                            />
+
+                        <Button
+                            android:id="@+id/rentall"
+                            style="@style/setting_toggle_button"
+                            android:background="@{rideOption == 2 ? @drawable/bg_focused_ride_option : @drawable/bg_unfocused_ride_option}"
+                            android:gravity="center"
+                            android:onClick="@{() -> handler.toggleRideOption(2)}"
+                            android:text="@string/rental" />
+
+                        <Button
+                            android:id="@+id/ceremony"
+                            style="@style/setting_toggle_button"
+                            android:background="@{rideOption == 3 ? @drawable/bg_focused_ride_option : @drawable/bg_unfocused_ride_option}"
+                            android:gravity="center"
+                            android:onClick="@{() -> handler.toggleRideOption(3)}"
+                            android:text="@string/ceremony" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp">
+
+                    <include
+                        android:id="@+id/locationBox"
+                        layout="@layout/search_location_box"
+                        android:visibility="visible" />
+
+                    <include
+                        android:id="@+id/pickLocationBox"
+                        layout="@layout/pick_location_box"
+                        android:visibility="gone" />
+
+                    <include
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        layout="@layout/bottom_buttons"/>
+
+
+                </RelativeLayout>
+
+                <include
+                    layout="@layout/layout_select_via_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigationView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:fitsSystemWindows="true">
+
+                <include
+                    layout="@layout/nav_header"
+                    app:handler="@{baseHandler}" />
+
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+
+        <include
+            android:id="@+id/rental"
+            layout="@layout/rental_details_layout"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/ceremonyLayout"
+            layout="@layout/ceremony_details_layout"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layoutOutside"
+            layout="@layout/layout_outside"
+            android:visibility="gone" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

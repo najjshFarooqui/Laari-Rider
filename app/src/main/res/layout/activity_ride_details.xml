@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:orientation="vertical"
+    tools:context=".views.activity.RideDetailsActivity">
+
+
+    <include
+        android:id="@+id/detailsToolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_rides_card"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/tvRideDate"
+            style="@style/regulatTvBold"
+            android:text="Fri , Aug 19 08:00 AM" />
+
+
+        <TextView
+            android:id="@+id/ridePickupTime"
+            style="@style/tvNormal"
+            android:text="Pickup 08:00 AM - 08:15 AM" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/tvNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Fare" />
+
+            <TextView
+                android:id="@+id/tvRideDetailsFare"
+                style="@style/tvNormal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|center_vertical"
+                android:text="200rs" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/tvNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Distance" />
+
+            <TextView
+                android:id="@+id/tvRideDetailsDistance"
+                style="@style/tvNormal"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="right|center_vertical"
+                android:text="2 Km" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/tvNormal"
+                android:text="Time"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvRideDetailsTime"
+                style="@style/tvNormal"
+                android:layout_width="match_parent"
+                android:gravity="right|center_vertical"
+                android:text="1 hour" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location_pin_orange" />
+
+            <TextView
+                android:id="@+id/tvPickup"
+                style="@style/tvNormal"
+                android:layout_marginLeft="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="32, imambada Lahore" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location_pin_black" />
+
+            <TextView
+                android:id="@+id/tvDrop"
+                style="@style/tvNormal"
+                android:layout_marginLeft="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="15, sadaf park Karachi" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

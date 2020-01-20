@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.laari.rider.views.activity.HomeInterface" />
+
+        <variable
+            name="baseHandler"
+            type="com.laari.rider.HomeBaseInterface" />
+
+
+    </data>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.laari.rider.views.activity.ReferFriendAcivity">
+
+            <include layout="@layout/toolbar" />
+
+
+            <ImageView
+                android:id="@+id/imageIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:src="@drawable/ic_boy" />
+
+
+            <TextView
+                android:id="@+id/tvLabel"
+                style="@style/regulatTvBold"
+                android:layout_below="@+id/imageIv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:text="@string/refer_your_friends_earn_cash" />
+
+
+            <LinearLayout
+                android:id="@+id/referalLL"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_below="@+id/tvLabel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bg_rides_card"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    style="@style/largeTvBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="11223344" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:background="@color/colorPrimary"
+                    android:text="share"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/referalLL"
+                android:layout_marginTop="32dp"
+                android:gravity="center_horizontal|center"
+                android:text="@string/invite_your_friends_to_join_and_get_rs_100_cashback_for_each_who_joins_using_your_referral_code" />
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:fitsSystemWindows="true">
+
+            <include
+                layout="@layout/nav_header"
+                app:handler="@{baseHandler}" />
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

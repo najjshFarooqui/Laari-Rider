@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.laari.rider.views.activity.HomeInterface" />
+
+        <variable
+            name="baseHandler"
+            type="com.laari.rider.HomeBaseInterface" />
+
+
+    </data>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="18dp"
+            tools:context="com.mevron.driver.views.activity.HomeActivity">
+
+
+            <ImageView
+                android:id="@+id/menuIv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_menu_black_24dp" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:scrollbars="none">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tvGreetRider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:fontFamily="@font/lato_black"
+                        android:text="hii Rider" />
+
+                    <TextView
+                        android:id="@+id/tvAsk"
+                        style="@style/regulatTvBold"
+                        android:layout_below="@+id/tvGreetRider"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/where_you_want_to_go_today" />
+
+                    <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                android:orientation="horizontal">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/insideCity"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_gree"
+                                    android:onClick="selectedVehicleType"
+
+                                   >
+
+                                    <ImageView
+                                        android:id="@+id/inside_image"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:src="@mipmap/inside"
+                                        android:layout_centerInParent="true" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/inside_image"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="16dp"
+                                        android:text="@string/inside_city"
+                                        android:textColor="@color/white"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+
+
+                                </RelativeLayout>
+
+
+
+
+
+                                <RelativeLayout
+                                    android:id="@+id/outsideCity"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginLeft="8dp"
+                                    android:background="@drawable/bg_card"
+                                    android:onClick="selectedVehicleType"
+
+                                   >
+
+                                    <ImageView
+                                        android:id="@+id/outside_image"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:src="@mipmap/outside"
+                                        android:layout_centerInParent="true" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/outside_image"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="16dp"
+                                        android:text="@string/outside_city"
+                                        android:textColor="@color/white"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+
+
+
+
+
+
+
+                    <TextView
+
+                        style="@style/regulatTvBold"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/favourite_destination_inside_city" />
+
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvFavInside"
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+
+                            <RelativeLayout
+                                android:id="@+id/addOther"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/rvFavInside"
+                                android:background="@drawable/bg_light_green">
+
+                                <ImageView
+                                    android:id="@+id/add_fav"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@mipmap/add"
+                                    android:layout_centerInParent="true" />
+
+                                <TextView
+                                    style="@style/cardTv"
+                                    android:layout_below="@+id/add_fav"
+                                    android:text="@string/add_other" />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </HorizontalScrollView>
+
+
+                    <TextView
+
+                        style="@style/regulatTvBold"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/favourite_destination_outside_city" />
+
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvFavOutSide"
+                                android:visibility="visible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+
+                            <RelativeLayout
+                                android:id="@+id/addOtherOutside"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/rvFavOutSide"
+                                android:background="@drawable/bg_light_green">
+
+                                <ImageView
+                                    android:id="@+id/add_fav_outside"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:src="@mipmap/add"
+                                    android:layout_centerInParent="true" />
+
+                                <TextView
+                                    style="@style/cardTv"
+                                    android:layout_below="@+id/add_fav_outside"
+                                    android:text="@string/add_other" />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </HorizontalScrollView>
+
+
+                    <TextView
+                        style="@style/regulatTvBold"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/trending_destinations" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+
+                            <RelativeLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/bg_light_green">
+
+                                <ImageView
+                                    android:id="@+id/iv_first"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_centerInParent="true" />
+
+                                <TextView
+                                    style="@style/cardTv"
+                                    android:layout_below="@+id/iv_first"
+                                    android:text="@string/lahore" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/bg_light_green">
+
+                                <ImageView
+                                    android:id="@+id/iv_second"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_centerInParent="true" />
+
+                                <TextView
+                                    style="@style/cardTv"
+                                    android:layout_below="@+id/iv_second"
+                                    android:text="Islamabad" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/bg_light_green">
+
+                                <ImageView
+                                    android:id="@+id/iv_third"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_centerInParent="true" />
+
+                                <TextView
+                                    style="@style/cardTv"
+                                    android:layout_below="@+id/iv_third"
+                                    android:text="@string/gilit" />
+
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:fitsSystemWindows="true">
+
+            <include
+                layout="@layout/nav_header"
+                app:handler="@{baseHandler}" />
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

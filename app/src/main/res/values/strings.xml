@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Laari Rider</string>
+    <string name="next">Next</string>
+    <string name="enter_mobile">Please enter your  number to verify</string>
+    <string name="add_your_phone">we\'ll take a code to verify your phone</string>
+    <string name="number_hint">  Number</string>
+    <string name="send_the_code_again">send the code again</string>
+    <string name="verify_now">Verify Now</string>
+    <string name="enter_the_code_send_to">enter the code send to %1$s </string>
+    <string name="eta">ETA %1$s</string>
+    <string name="distance">Distance %1$s</string>
+    <string name="fare">Fare %1$s</string>
+    <string name="please_enter_your_otp_code_to_verify">Please enter your OTP code to verify</string>
+    <string name="please_enter_referral_code_here">please enter referral code here</string>
+    <string name="referral_code">Referral code</string>
+    <string name="please_add_your_latest_photo_so_our_driver_can_easily_nfind_you">please add your latest photo so our driver can easily  find you</string>
+    <string name="please_add_your_photo">Please add your photo</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_from_gallery">choose from gallery</string>
+    <string name="finish">Finish</string>
+    <string name="title_activity_welcome_driver">Settings</string>
+    <string name="map_api_key">AIzaSyBNIf1AoAvdrOaP0kcXP-xz_UqzKqGCAew</string>
+
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="refer_your_friends_earn_cash">Refer your friends, Earn cash</string>
+    <string name="invite_your_friends_to_join_and_get_rs_100_cashback_for_each_who_joins_using_your_referral_code">invite your friends to join and get Rs.100  \ncash back for each who joins using your referral code</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="home_city">Home City</string>
+    <string name="date_and_time">Date and time</string>
+    <string name="dec_17_10_20_am">Dec 17, 10:20 am</string>
+    <string name="fare_approx">Fare Approx.</string>
+    <string name="km_required">KM Required</string>
+    <string name="hours_required">Hours Required</string>
+    <string name="vehicle_type">Vehicle Type</string>
+    <string name="_1000rs">1000rs</string>
+    <string name="invalid_number">invalid number</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="inside_city">Inside City</string>
+    <string name="outside_city">Outside</string>
+    <string name="where_you_want_to_go_today">where you want to go today?</string>
+    <string name="favourite_destination_inside_city">favourite destination inside city</string>
+    <string name="favourite_destination_outside_city">favourite destination outside city</string>
+    <string name="trending_destinations">trending destinations</string>
+    <string name="add_other">add other</string>
+    <string name="office">office</string>
+    <string name="lahore">Lahore</string>
+    <string name="gilit">Gilit</string>
+    <string name="hospital">Hospital</string>
+    <string name="home">Home</string>
+    <string name="enter_drop_location">Enter drop location</string>
+    <string name="enter_pickup_location">Enter pickup location</string>
+    <string name="daily">Daily</string>
+    <string name="rental">Rental</string>
+    <string name="ceremony">Ceremony</string>
+    <string name="image_added_successfully">Image added successfully</string>
+    <string name="profile_photo">Profile photo</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="add_home">Add Home</string>
+    <string name="not_a_user">currently you are not a Laari user, sign up and get in...</string>
+    <string name="ride_later">Ride Later</string>
+    <string name="ride_now">Ride Now</string>
+    <string name="_continue">Continue</string>
+
+</resources>

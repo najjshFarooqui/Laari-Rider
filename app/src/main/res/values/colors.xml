@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFF</color>
+    <color name="yellowText">#FFFE9500</color>
+    <color name="hintclor">#FF9B9B9B</color>
+    <color name="yellow">#FFFE9500</color>
+    <color name="dark">#FF161616</color>
+    <color name="background">#FF292929</color>
+    <color name="colorPrimary">#52A9F5</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#52A9F5</color>
+    <color name="colorRead">#ff0006</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorDarkOrange">#fe9500</color>
+    <color name="light_orange">#ff8235</color>
+    <color name="newButtonOrange">#F3953D</color>
+    <color name="newTextOrange">#FBA800</color>
+    <color name="colorWhiteGrey">#949494</color>
+    <color name="colorInputBorder">#505050</color>
+    <color name="colorInputBg">#161616</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBtnBlack">#292929</color>
+    <color name="colorHint">#9b9b9b</color>
+    <color name="colorDropdown">#292929</color>
+    <color name="colorSideMenuBg">#161616</color>
+    <color name="colorPopupBg">#646464</color>
+    <color name="colorOrange">#f09937</color>
+    <color name="colorDonateBack">#246385</color>
+    <color name="colorGreen">#7FB320</color>
+    <color name="colorRiderInputWhiteGrey">#f1f1f1</color>
+    <color name="colorRiderInputBorder">#d8d8d8</color>
+    <color name="newBorderGrey">#979797</color>
+    <color name="lightGreyFont">#B9B9B9</color>
+    <color name="rideTextColor">#4A4A4A</color>
+    <color name="textColor">#9B9B9B</color>
+    <color name="purple">#298D9C</color>
+    <color name="light_green">#F3953D</color>
+    <color name="transparent">#00FFFFFF</color>
+
+
+</resources>

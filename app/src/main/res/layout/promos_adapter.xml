@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+
+        android:background="@drawable/bg_rides_card"
+
+        >
+
+        <TextView
+            android:id="@+id/tvPromo"
+            style="@style/regulatTvBold"
+            android:layout_marginLeft="10dp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:text="Promo 20"
+
+            />
+
+        <TextView
+            android:id="@+id/tvValidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPromo"
+            android:layout_marginLeft="10dp"
+            android:text="valid until 1 jan 2020"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
+
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"
+            android:text="Copy"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

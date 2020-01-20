@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon_size_18">18dp</dimen>
+    <dimen name="icon_size_24">24dp</dimen>
+    <dimen name="icon_size_34">34dp</dimen>
+    <dimen name="icon_size_48">48dp</dimen>
+    <dimen name="icon_size_52">52dp</dimen>
+
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_small_medium">13sp</dimen>
+    <dimen name="text_medium">15sp</dimen>
+    <dimen name="text_medium_large">18sp</dimen>
+    <dimen name="text_large">22sp</dimen>
+    <dimen name="text_extra_large">30sp</dimen>
+
+    <dimen name="button_radius">30dp</dimen>
+    <dimen name="corner_radius_small">3dp</dimen>
+    <dimen name="corner_radius_medium">10dp</dimen>
+
+    <dimen name="profile_image_size_large">180dp</dimen>
+    <dimen name="profile_image_size_medium">90dp</dimen>
+    <!--  Half of the image size -->
+    <dimen name="profile_image_size_medium_radius">45dp</dimen>
+
+    <dimen name="car_with_main_img_height">250dp</dimen>
+    <dimen name="padding_side_title_text">5dp</dimen>
+    <dimen name="padding_top_title_text">10dp</dimen>
+    <dimen name="text_size_time_preset_unit">14sp</dimen>
+
+
+</resources>

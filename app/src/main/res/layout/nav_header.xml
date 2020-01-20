@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.laari.rider.HomeBaseInterface" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/myProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/nav_layout_rider_img"
+                android:layout_width="@dimen/profile_image_size_medium"
+                android:layout_height="@dimen/profile_image_size_medium"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="25dp"
+                android:paddingLeft="32dp"
+                android:src="@drawable/ic_boy" />
+
+
+            <TextView
+                android:id="@+id/nav_layout_rider_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_toRightOf="@+id/nav_layout_rider_img"
+                android:text="Rider"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/profileViewTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nav_layout_rider_name"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/nav_layout_rider_img"
+                android:gravity="center_horizontal"
+                android:text="View Profile"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorWhite"
+
+                />
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/myProfile">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/navHomeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onHomeClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@mipmap/icon_home" />
+
+                    <TextView
+                        android:id="@+id/tvHome"
+                        style="@style/nav_regular"
+                        android:text="Home" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/navScheduleRidesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onScheduleRidesClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@mipmap/scheduled_ride_icon" />
+
+                    <TextView
+                        android:id="@+id/tvRideHistory"
+                        style="@style/nav_regular"
+                        android:layout_height="wrap_content"
+                        android:text="Scheduled Rides" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/navNotificationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onRideNotificationClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@mipmap/notification_icon" />
+
+                    <TextView
+                        android:id="@+id/tvMyEarning"
+                        style="@style/nav_regular"
+                        android:layout_height="wrap_content"
+                        android:text="Notification" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/navReferralLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onReferralClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@mipmap/reffral_icon" />
+
+                    <TextView
+                        android:id="@+id/tvInviteFriend"
+                        style="@style/nav_regular"
+                        android:layout_height="wrap_content"
+                        android:text="Referral" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/navRideHistoryLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onRideHistoryClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@mipmap/ride_history_icon" />
+
+                    <TextView
+                        android:id="@+id/tvSetting"
+                        style="@style/nav_regular"
+                        android:layout_height="wrap_content"
+                        android:text="Ride History" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/navPromosLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onPromosClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@mipmap/coupon_icon"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvPromos"
+                        style="@style/nav_regular"
+                        android:text="Promos" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/navPaymentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onPaymentClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_credit_card_black"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvPayment"
+                        style="@style/nav_regular"
+                        android:text="Payment" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/navLogoutLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> handler.onLogoutClicked()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@mipmap/logout_icon" />
+
+                    <TextView
+                        android:id="@+id/tvLogout"
+                        style="@style/nav_regular"
+                        android:text="Logout" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/navAboutUsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:onClick="@{() -> handler.onAboutUsClicked()}"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/quantum_grey" />
+
+
+            <TextView
+                android:id="@+id/tvAboutUs"
+                style="@style/nav_regular"
+                android:text="About us"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/icon_size_18"
+                    android:layout_marginLeft="16dp"
+                    android:src="@mipmap/become_partner_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Become Partner"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

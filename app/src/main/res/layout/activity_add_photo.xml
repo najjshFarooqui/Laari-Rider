@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        tools:context="com.laari.rider.views.activity.registration.AddPhotoActivity">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/tvLabel"
+            style="@style/PleaseEnterYourNu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/please_add_your_photo" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLabel"
+            android:text="@string/please_add_your_latest_photo_so_our_driver_can_easily_nfind_you" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/addPhotoIv"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/tvLabel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/icon_size_48"
+            android:src="@drawable/add_photo" />
+
+
+        <TextView
+            android:id="@+id/tvLabel1"
+            style="@style/Text_Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addPhotoIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_photo" />
+
+
+       <!-- <LinearLayout
+            android:id="@+id/take"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLabel1"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/camera" />
+
+            <TextView
+                style="@style/textDarkBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="32dp"
+                android:text="@string/take_photo" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/take"
+            android:layout_marginTop="16sp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/gallary"
+
+                />
+
+            <TextView
+                style="@style/textDarkBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="32dp"
+                android:text="@string/choose_from_gallery" />
+
+        </LinearLayout>
+
+
+
+-->
+        <Button
+            android:id="@+id/imageUploadFinish"
+            style="@style/main_btn_yellow"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="64dp"
+            android:text="@string/_continue" />
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/choose_photo_sheet"/>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.laari.rider.views.activity.registration.OTPVerificationActivity">
+
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorTransparent"
+        android:src="@drawable/ic_arrow_back" />
+
+
+    <TextView
+        android:id="@+id/pleaseEnterNumtv"
+        style="@style/PleaseEnterYourNu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backBtn"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/please_enter_your_otp_code_to_verify" />
+
+    <TextView
+        android:id="@+id/enterCodeSentTo"
+        style="@style/smallTv"
+        android:layout_below="@+id/pleaseEnterNumtv"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/enter_the_code_send_to"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:id="@+id/otpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/enterCodeSentTo"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et1"
+            style="@style/otpET" />
+
+        <EditText
+            android:id="@+id/et2"
+            style="@style/otpET" />
+
+        <EditText
+            android:id="@+id/et3"
+            style="@style/otpET" />
+
+        <EditText
+            android:id="@+id/et4"
+            style="@style/otpET"/>
+
+        <EditText
+            android:id="@+id/et5"
+            style="@style/otpET"/>
+
+        <EditText
+            android:id="@+id/et6"
+            style="@style/otpET" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/otpLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/resend_otp_tv"
+            style="@style/italicTV"
+            android:layout_marginTop="16dp"
+            android:text="@string/send_the_code_again" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/quantum_grey"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnVerifyOTP"
+        style="@style/main_btn_yellow"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:text="@string/verify_now" />
+</RelativeLayout>
