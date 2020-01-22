@@ -21,7 +21,7 @@ class RegistrationActivity : HomeBaseActivity() {
             val lastName = lastNameEt.text.toString()
             val email = emailEt.text.toString()
             val id = nationalIdEt.text.toString()
-            val home = homeCityEt.text.toString()
+
             val address = addressEt.text.toString()
             val userData = RegistrationModel
 
@@ -37,8 +37,7 @@ class RegistrationActivity : HomeBaseActivity() {
             } else if (id.isNullOrEmpty()) {
                 nationalIdEt.error = "please enter national id"
 
-            } else if (home.isNullOrEmpty()) {
-                homeCityEt.error = "please enter home and city"
+
 
             } else if (address.isNullOrEmpty()) {
                 addressEt.error = "please provide your address"
@@ -53,8 +52,7 @@ class RegistrationActivity : HomeBaseActivity() {
                 userData.emailAddress = email
                 intent.putExtra(Id, id)
                 userData.nationalId = id
-                intent.putExtra(Home, home)
-                userData.homeCity = home
+
                 intent.putExtra(Address, address)
                 userData.residentialAddress = address
                 startActivity(intent)

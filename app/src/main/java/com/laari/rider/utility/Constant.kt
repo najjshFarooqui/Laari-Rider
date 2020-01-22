@@ -16,7 +16,7 @@ const val RESULT_DATA = "result_data"
 
 const val PATH_WIDTH = 5f
 
-const val API_BASE_URL: String = "http://applligent.com/project/taxi-web/api/"
+const val API_BASE_URL: String = "http://applligent.com/project/laari-website/api/v1/"
 const val RIDER_NODE = "Riders"
 
 const val DEVICE_TYPE = "Device-Type"
@@ -45,3 +45,7 @@ const val FARE = "fare"
 const val WAITING_TIME = "waitingTime"
 const val DATE = "date"
 const val CURRENT_LOCATION = "currentLocation"
+
+
+
+const val GET_COMPANIES = "getAllCompany"

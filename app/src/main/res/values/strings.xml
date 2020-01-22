@@ -80,5 +80,6 @@
     <string name="ride_later">Ride Later</string>
     <string name="ride_now">Ride Now</string>
     <string name="_continue">Continue</string>
+    <string name="company">Company</string>
 
 </resources>
