@@ -13,10 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.google.gson.GsonBuilder
 import com.laari.rider.models.Cities
 import com.laari.rider.models.RegistrationModel
-import com.laari.rider.network.auth.AuthAPI
-import com.laari.rider.network.auth.AuthApiService
-import com.laari.rider.network.auth.States
-import com.laari.rider.network.auth.StatesResponse
+import com.laari.rider.network.auth.*
 import com.laari.rider.utility.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -31,12 +28,16 @@ class SignupViewModel(val context: Application) : AndroidViewModel(context) {
 
     val statesLiveData: LiveData<ArrayList<States>>  = authAPIService.statesLiveData
     val citiesLiveData : LiveData<ArrayList<Cities>> = authAPIService.cityLiveData
+    val companyLiveData : LiveData<ArrayList<Company>> = authAPIService.companyLiveData
+    val centerLiveData : LiveData<ArrayList<BookingCentre>> = authAPIService.centersLiveData
+    val registerLiveData : LiveData<Any> = authAPIService.registerLiveData
+
 
     fun loadStates(id: String )= authAPIService.getStates(id)
     fun loadCities(id: String) = authAPIService.getCities(id)
-
-
-
+    fun loadCompany(id: String) = authAPIService.getCompanies(id)
+    fun loadCenters(id: String) = authAPIService.getCenters(id)
+    fun registerUser(signUpRequest: SignUpRequest) = authAPIService.registerUser(signUpRequest)
 
 
 }

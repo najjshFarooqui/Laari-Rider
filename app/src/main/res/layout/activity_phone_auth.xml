@@ -76,7 +76,6 @@
             android:inputType="number"
             android:maxLength="10"
             android:paddingLeft="10dp"
-            android:text="96669666936"
             android:textColorHint="@color/textColor"
             android:textSize="14sp"
             android:windowSoftInputMode="stateVisible|adjustResize" />

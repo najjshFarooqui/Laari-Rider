@@ -20,11 +20,11 @@
 
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="32dp"
-                android:src="@drawable/ic_boy" />
+                android:src="@mipmap/logo" />
 
 
             <EditText
@@ -34,7 +34,7 @@
                 android:layout_marginTop="32dp"
                 android:hint="Name "
                 android:inputType="textCapWords"
-                android:text="Najish" />
+              />
 
 
             <EditText
@@ -44,7 +44,7 @@
                 android:layout_marginTop="16dp"
                 android:hint="Last Name"
                 android:inputType="textCapWords"
-                android:text="Farooqui" />
+              />
 
             <EditText
                 android:id="@+id/emailEt"
@@ -52,7 +52,7 @@
                 android:layout_marginTop="16dp"
                 android:hint="email address"
                 android:inputType="textEmailAddress"
-                android:text="najish.farooqui@gmail.com" />
+                />
 
             <EditText
                 android:id="@+id/nationalIdEt"
@@ -60,7 +60,7 @@
                 android:layout_marginTop="16dp"
                 android:hint="national identity number"
                 android:inputType="number"
-                android:text="1234567890" />
+               />
 
 
 
@@ -73,10 +73,11 @@
 
                 <TextView
                     android:id="@+id/tvState"
-                    style="@style/tvSpinner" />
+                    style="@style/tvSpinner"
+                    android:hint="States"/>
 
                 <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/stateSpinner"
+                    android:id="@+id/statesSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -92,6 +93,7 @@
 
                 <TextView
                     android:id="@+id/tvCity"
+                    android:hint="Cities"
                     style="@style/tvSpinner" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
@@ -110,7 +112,7 @@
                 style="@style/inputBox"
                 android:layout_marginTop="16dp"
                 android:hint="residential address"
-                android:text="Yashwant marg" />
+              />
 
 
             <Button

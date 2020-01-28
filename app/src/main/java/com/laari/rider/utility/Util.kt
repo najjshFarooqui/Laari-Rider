@@ -1,7 +1,9 @@
 package com.laari.rider.utility
 
 import android.app.ActionBar
+import android.app.ProgressDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.location.Address
@@ -11,6 +13,8 @@ import android.net.ConnectivityManager
 
 import android.text.TextUtils
 import android.util.Patterns
+import android.view.KeyEvent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 import com.google.android.gms.maps.model.BitmapDescriptor
@@ -88,3 +92,16 @@ fun Context.getDirectionsUrl(origin: LatLng, dest: LatLng): String {
 
 
 
+fun getProgressDialog(activity: AppCompatActivity): ProgressDialog {
+    val progressDialog = ProgressDialog(activity)
+    progressDialog.setCancelable(false)
+    progressDialog.setOnKeyListener(DialogInterface.OnKeyListener { dialog, keyCode, _ ->
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            dialog.dismiss()
+            activity.finish()
+            return@OnKeyListener true
+        }
+        false
+    })
+    return progressDialog
+}

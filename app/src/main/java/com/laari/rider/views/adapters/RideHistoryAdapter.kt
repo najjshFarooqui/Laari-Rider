@@ -45,6 +45,7 @@ class RideHistoryAdapter(val model: ArrayList<RidesModel>) :
 
 
             itemView.setOnClickListener {
+
                 val history = model[adapterPosition]
                 val intent =
                     Intent(itemView.context, RideDetailsActivity::class.java)

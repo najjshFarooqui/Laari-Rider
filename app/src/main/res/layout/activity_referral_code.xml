@@ -71,58 +71,7 @@
             </RelativeLayout>
 
 
-            <FrameLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/spinner_back">
-
-                <TextView
-                    android:id="@+id/statesTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:hint="States"
-                    android:textColorHint="@color/hintclor"
-                    android:textSize="15sp" />
-
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/statesSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@android:color/transparent"
-                    android:paddingRight="32dp" />
-            </FrameLayout>
-
-
-            <FrameLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/spinner_back">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:hint="Cities"
-                    android:textColorHint="@color/hintclor"
-                    android:textSize="15sp" />
-
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/citiesSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@android:color/transparent"
-
-                    android:paddingRight="32dp" />
-            </FrameLayout>
 
 
             <FrameLayout
@@ -133,6 +82,7 @@
                 android:background="@drawable/spinner_back">
 
                 <TextView
+                    android:id="@+id/companyTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -159,6 +109,7 @@
                 android:background="@drawable/spinner_back">
 
                 <TextView
+                    android:id="@+id/tvCenter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"

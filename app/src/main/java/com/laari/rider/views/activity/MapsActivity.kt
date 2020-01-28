@@ -9,6 +9,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.location.Location
 import android.os.Bundle
+import android.os.Handler
 import android.os.Parcelable
 import android.util.Log
 import android.view.Gravity
@@ -24,6 +25,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -41,19 +44,23 @@ import com.laari.rider.databinding.ActivityHomeBinding
 import com.laari.rider.models.*
 import com.laari.rider.utility.*
 import com.laari.rider.viewmodels.HomeViewModel
-import com.laari.rider.views.adapters.VehicleColorAdapter
-import com.laari.rider.views.adapters.VehicleMakersAdapter
-import com.laari.rider.views.adapters.VehicleModelsAdapter
-import com.laari.rider.views.adapters.VehicleTypesAdapter
+import com.laari.rider.views.adapters.*
+import com.laari.rider.views.adapters.SelectVehicleAdapter
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottom_buttons.*
 import kotlinx.android.synthetic.main.ceremony_details_layout.*
+import kotlinx.android.synthetic.main.ceremony_details_layout.tvVehicleType
+import kotlinx.android.synthetic.main.dialog_choose_vehicle.*
+import kotlinx.android.synthetic.main.dialog_driver_found.*
+import kotlinx.android.synthetic.main.dialog_ride_detail.*
+import kotlinx.android.synthetic.main.dialog_searching_driver.*
 import kotlinx.android.synthetic.main.layout_outside.*
 import kotlinx.android.synthetic.main.nav_header.*
 import kotlinx.android.synthetic.main.pick_location_box.*
 import kotlinx.android.synthetic.main.rental_details_layout.*
 import kotlinx.android.synthetic.main.search_location_box.*
 import kotlinx.android.synthetic.main.search_location_box.pic_address_tv
+import org.jetbrains.anko.textColor
 
 
 class MapsActivity : HomeBaseActivity(),
@@ -87,6 +94,8 @@ class MapsActivity : HomeBaseActivity(),
     private var vehicleMake: String = ""
     private var vehicleModel: String = ""
     private var vehicleColor: String = ""
+
+    private val SEARCH_DELAY: Long = 2000
 
 
     private val isLocationServiceRunning: Boolean
@@ -146,6 +155,10 @@ class MapsActivity : HomeBaseActivity(),
         val makersList = viewModel.getMakersList().value as ArrayList<VehicleMakersData>
         val modelList = viewModel.getModelsList().value as ArrayList<ModelsData?>
         val colorList = viewModel.getColorsList().value as ArrayList<VehicleColorsData>
+
+        val vehicleList = viewModel.getVehicleList().value as ArrayList<AvailableVehicleModel>
+
+
         val typesAdapter = VehicleTypesAdapter(this, typesList)
         val makersAdapter = VehicleMakersAdapter(this, makersList)
         val modelsAdapter = VehicleModelsAdapter(this, modelList)
@@ -155,6 +168,11 @@ class MapsActivity : HomeBaseActivity(),
         makeVehSpinner.adapter = makersAdapter
         modelVehSpinner!!.adapter = modelsAdapter
         colorVehSpinner.adapter = colorAdapter
+
+        rvVehiclesList.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+
+        val adapter = SelectVehicleAdapter(this, vehicleList!!)
+        rvVehiclesList.adapter = adapter
 
 
         typeVehSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -292,6 +310,50 @@ class MapsActivity : HomeBaseActivity(),
                     }
                     //Todo call api related to Outside vehicle
                 }
+            }
+
+        }
+        btnRideNow.setOnClickListener {
+            if (pic_address_tv.text.isEmpty()) {
+                toast("please enter pickup address first")
+            } else if (drop_address_tv.text.isEmpty()) {
+                toast("please enter drop address ")
+            } else {
+                toggle()
+                dialog_choose_vehicle.visibility = View.VISIBLE
+                locationBox.visibility = View.VISIBLE
+            }
+
+            btnChooseVehicleContinue.setOnClickListener {
+                toggle()
+                dialog_vehicle_details.visibility = View.VISIBLE
+                locationBox.visibility = View.VISIBLE
+            }
+
+
+            btnRequestRide.setOnClickListener {
+                toggle()
+                dialog_searching_driver.visibility = View.VISIBLE
+                locationBox.visibility = View.VISIBLE
+
+            }
+
+            btnCancelRide.setOnClickListener {
+                toggle()
+                dialog_driver_found.visibility = View.VISIBLE
+                locationBox.visibility = View.VISIBLE
+            }
+
+
+
+
+            btnShareRide.setOnClickListener {
+                toggle()
+                dialog_ride_started.visibility = View.VISIBLE
+                Handler().postDelayed({
+                    startNewActivity(RideFinishedActivity())
+                }, 3000)
+
             }
 
         }
@@ -449,10 +511,12 @@ class MapsActivity : HomeBaseActivity(),
                             locationResult.lastLocation.longitude
                         )
                         // Todo: put current location in session
-                        pic_address_tv.text = currentLocation
-                        picLocationTv.text = currentLocation
-                        var current = SimpleLocation(   locationResult.lastLocation.latitude,
-                               locationResult.lastLocation.longitude)
+                        // pic_address_tv.text = currentLocation
+                        // picLocationTv.text = currentLocation
+                        var current = SimpleLocation(
+                            locationResult.lastLocation.latitude,
+                            locationResult.lastLocation.longitude
+                        )
 
 
                         saveCurrentLocation(this@MapsActivity, current)
@@ -552,6 +616,11 @@ class MapsActivity : HomeBaseActivity(),
         locationBox.visibility = View.GONE
         ceremonyLayout.visibility = View.GONE
         mapsToolbar.visibility = View.GONE
+        dialog_choose_vehicle.visibility = View.GONE
+        dialog_driver_found.visibility = View.GONE
+        dialog_vehicle_details.visibility = View.GONE
+        dialog_ride_started.visibility = View.GONE
+        dialog_searching_driver.visibility = View.GONE
     }
 
     override fun onBackPressed() {

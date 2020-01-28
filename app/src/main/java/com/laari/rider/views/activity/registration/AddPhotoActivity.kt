@@ -64,21 +64,11 @@ class AddPhotoActivity : HomeBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_photo)
+
         val currentFirebaseUser: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
         userId = currentFirebaseUser.uid
 
         storageReference = storage.getReferenceFromUrl(FIREBASE_STORAGE_PATH)
-
-        val bundle = intent.extras
-        if (bundle != null) {
-            firstName = bundle.getString(Name)!!
-            lastName = bundle.getString(LastName)!!
-            email = bundle.getString(Email)!!
-            nId = bundle.getString(Id)!!
-            homeCity = bundle.getString(Home)!!
-            residentialAddress = bundle.getString(Address)!!
-        }
-
 
 
         bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_layout)
@@ -169,7 +159,7 @@ class AddPhotoActivity : HomeBaseActivity() {
 
 
     private fun choosePhotoFromGallery() {
-        var intent = Intent()
+        val intent = Intent()
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
@@ -244,7 +234,7 @@ class AddPhotoActivity : HomeBaseActivity() {
                     imageUrl = it.toString()
 
                     val userData = RegistrationModel
-                    userData.profilePhotoUrl = imageUrl
+                    userData.profileUrl = imageUrl
                     Toast.makeText(
                         this,
                         getString(R.string.image_added_successfully),

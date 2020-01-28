@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.activity.RideFinishedActivity">
+
+    <TextView
+        android:id="@+id/tvLabel"
+        style="@style/mediumBoldTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Thank You \n You have successfully completed a ride" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvLabel"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/white"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/ivDriverImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_boy" />
+
+
+            <TextView
+                android:id="@+id/tvDriverName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivDriverImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Driver Name" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="write some comments about driver" />
+
+
+            <RatingBar
+                android:id="@+id/ratebartoDriver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp" />
+
+
+            <Button
+                android:id="@+id/btnSubmitFeedback"
+                style="@style/main_btn_yellow"
+                android:layout_marginTop="16dp"
+                android:text="Submit" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

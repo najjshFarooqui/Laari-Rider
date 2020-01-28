@@ -7,12 +7,13 @@
     android:paddingBottom="16dp">
 
     <ImageView
+        android:id="@+id/pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:src="@drawable/ic_icon___destination_pin___dark_grey" />
+        android:src="@drawable/ic_location_pin_orange" />
 
     <LinearLayout
         android:layout_width="match_parent"

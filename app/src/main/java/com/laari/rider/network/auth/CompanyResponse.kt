@@ -1,6 +1,6 @@
 package com.laari.rider.network.auth
 
-class CompanyResponse( val success : Boolean ,var company  : List<Company> )
+data class CompanyResponse( val success : Boolean ,var company  : ArrayList<Company> )
 
 
-class Company ( var id : Int , var companyName : String)
+data class Company ( var id : String , var companyName : String)

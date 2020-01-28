@@ -1,4 +1,5 @@
 package com.laari.rider.viewmodels
+
 import android.graphics.Color
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,10 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.PolylineOptions
-import com.laari.rider.models.ModelsData
-import com.laari.rider.models.VehicleColorsData
-import com.laari.rider.models.VehicleMakersData
-import com.laari.rider.models.VehicleTypeSData
+import com.laari.rider.models.*
 import com.laari.rider.utility.DirectionsJSONParser
 import com.laari.rider.utility.PATH_WIDTH
 import org.jetbrains.anko.doAsync
@@ -31,9 +29,7 @@ class HomeViewModel : ViewModel() {
     var makersList: MutableLiveData<List<VehicleMakersData>>? = null
     var modelsList: MutableLiveData<List<ModelsData>>? = null
     var colorsList: MutableLiveData<List<VehicleColorsData>>? = null
-
-
-
+    var vehicleList: MutableLiveData<List<AvailableVehicleModel>>? = null
 
 
     fun getRoute(url: String) {
@@ -129,6 +125,16 @@ class HomeViewModel : ViewModel() {
     }
 
 
+
+    fun getVehicleList() : LiveData<List<AvailableVehicleModel>>{
+        if(vehicleList == null){
+            vehicleList = MutableLiveData()
+            loadVehicles()
+        }
+        return vehicleList!!
+    }
+
+
     fun loadVehicleType() {
         val list = ArrayList<VehicleTypeSData>()
         list.add(VehicleTypeSData("Type"))
@@ -182,8 +188,19 @@ class HomeViewModel : ViewModel() {
         list.add(VehicleColorsData("Yellow"))
         list.add(VehicleColorsData("Orange"))
         list.add(VehicleColorsData("Red"))
-            colorsList!!.value = list
+        colorsList!!.value = list
 
+    }
+
+
+    fun loadVehicles() {
+        val list = ArrayList<AvailableVehicleModel>()
+        list.add(AvailableVehicleModel(1, "Auto Rikshaw", "3", "200 rs"))
+        list.add(AvailableVehicleModel(1, "Economy Car", "4", "300 rs"))
+        list.add(AvailableVehicleModel(1, "Standard Car", "3", "500 rs"))
+        list.add(AvailableVehicleModel(1, "Luxury car", "3", "800 rs"))
+
+        vehicleList?.value = list
     }
 
 

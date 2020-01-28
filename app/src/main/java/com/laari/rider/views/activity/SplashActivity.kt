@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         if (!isFinishing) {
 
             if(isLoggedIn(this)){
-                val intent = Intent(applicationContext, MapsActivity::class.java)
+                val intent = Intent(applicationContext, HomeDashboardActivity::class.java)
                 startActivity(intent)
                 finish()
             }else{

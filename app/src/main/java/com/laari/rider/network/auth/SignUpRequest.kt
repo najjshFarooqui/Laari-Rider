@@ -1,8 +1,6 @@
 package com.laari.rider.network.auth
 
-class SignUpRequest(
-
-
+    data class SignUpRequest(
     val role: Int,
     val uId: String,
     val firstName: String,
@@ -10,12 +8,14 @@ class SignUpRequest(
     val email: String,
     val cnic: String,
     val phoneNumber: String,
-    val cityId: Int,
+    val stateId: String,
+    val cityId: String,
     val address: String,
     val profileUrl: String,
     val referralCode: String,
-    val companyId: Int,
-    val bookingCentreId: Int
+    val companyId: String,
+    val bookingCentreId: String,
+    val deviceId: String,
+    val deviceType: String
 
-
-)
+    )

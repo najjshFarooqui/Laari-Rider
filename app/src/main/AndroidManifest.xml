@@ -20,9 +20,10 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".views.activity.RideDetailsActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".views.activity.RideFinishedActivity"></activity>
+        <activity android:name=".views.activity.RideDetailsActivity" />
         <activity android:name=".views.activity.FavouritePredectionActivity" />
         <activity android:name=".views.activity.PlacePredictionActivity" />
         <activity android:name=".views.activity.AboutUsActivity" />
@@ -42,10 +43,10 @@
         <activity android:name=".views.activity.registration.PhoneAuthActivity" />
         <activity android:name=".views.activity.registration.OTPVerificationActivity" />
         <activity android:name=".views.activity.registration.RegistrationActivity" />
-        <activity android:name=".views.activity.SplashActivity" />
+        <activity android:name=".views.activity.registration.ReferralCodeActivity" />
         <activity android:name=".views.activity.AddCardActivity" />
         <activity android:name=".views.activity.MapsActivity" />
-        <activity android:name=".views.activity.registration.ReferralCodeActivity">
+        <activity android:name=".views.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -185,9 +185,26 @@ fun getCurrentLocation(context: Context): SimpleLocation? {
             null
         }
     }
+
+
+
+
+
+
+}
+
+fun setCountryNameCode(context: Context, code: String) {
+    val sharedPreferences = context.getSharedPreferences("laariRider", Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    editor.putString("countryNameCode", code).apply()
+
 }
 
 
+fun getCountryNameCode(context: Context): String? {
+    val sharedPreferences = context.getSharedPreferences("laariRider", Context.MODE_PRIVATE)
+    return sharedPreferences.getString("countryNameCode", "")
+}
 
 
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/bg_rides_card"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tvLabel"
+        style="@style/largeTvBold"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:text="Choose Vehicle to Ride" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVehiclesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLabel"
+        android:layout_marginTop="8dp" />
+
+
+    <Button
+        android:id="@+id/btnChooseVehicleContinue"
+        style="@style/main_btn_yellow"
+        android:layout_below="@id/rvVehiclesList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Continue" />
+
+</RelativeLayout>

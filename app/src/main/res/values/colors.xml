@@ -6,9 +6,9 @@
     <color name="yellow">#FFFE9500</color>
     <color name="dark">#FF161616</color>
     <color name="background">#FF292929</color>
-    <color name="colorPrimary">#52A9F5</color>
+    <color name="colorPrimary">#1958E0</color>
     <color name="colorPrimaryDark">#000</color>
-    <color name="colorAccent">#52A9F5</color>
+    <color name="colorAccent">#1958E0</color>
     <color name="colorRead">#ff0006</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorDarkOrange">#fe9500</color>

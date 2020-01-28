@@ -58,8 +58,8 @@
                     android:id="@+id/mapsToolbar"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:visibility="gone"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/menuIv"
@@ -86,6 +86,7 @@
                             android:gravity="center"
                             android:onClick="@{() -> handler.toggleRideOption(1)}"
                             android:text="@string/daily"
+                            android:textColor="@{rideOption == 1 ? @color/white : @color/colorBlack}"
 
                             />
 
@@ -95,7 +96,8 @@
                             android:background="@{rideOption == 2 ? @drawable/bg_focused_ride_option : @drawable/bg_unfocused_ride_option}"
                             android:gravity="center"
                             android:onClick="@{() -> handler.toggleRideOption(2)}"
-                            android:text="@string/rental" />
+                            android:text="@string/rental"
+                            android:textColor="@{rideOption == 2 ? @color/white : @color/colorBlack}" />
 
                         <Button
                             android:id="@+id/ceremony"
@@ -103,7 +105,8 @@
                             android:background="@{rideOption == 3 ? @drawable/bg_focused_ride_option : @drawable/bg_unfocused_ride_option}"
                             android:gravity="center"
                             android:onClick="@{() -> handler.toggleRideOption(3)}"
-                            android:text="@string/ceremony" />
+                            android:text="@string/ceremony"
+                            android:textColor="@{rideOption == 3 ? @color/white : @color/colorBlack}" />
                     </LinearLayout>
 
 
@@ -126,11 +129,60 @@
                         android:visibility="gone" />
 
                     <include
-                        android:layout_alignParentBottom="true"
+                        layout="@layout/bottom_buttons"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="2dp" />
+
+
+
+
+
+                    <include
+                        android:id="@+id/dialog_choose_vehicle"
+                        layout="@layout/dialog_choose_vehicle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
                         android:layout_marginBottom="2dp"
-                        layout="@layout/bottom_buttons"/>
+                        android:visibility="gone" />
+
+
+                    <include
+                        android:id="@+id/dialog_vehicle_details"
+                        layout="@layout/dialog_ride_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="2dp"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/dialog_driver_found"
+                        android:visibility="gone"
+                        layout="@layout/dialog_driver_found"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"/>
+
+
+                    <include
+                        android:id="@+id/dialog_ride_started"
+                        android:visibility="gone"
+                        layout="@layout/dialog_ride_started"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"/>
+
+                    <include
+                        android:id="@+id/dialog_searching_driver"
+                        android:visibility="gone"
+                        layout="@layout/dialog_searching_driver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true" />
+
 
 
                 </RelativeLayout>
@@ -174,6 +226,8 @@
             android:id="@+id/layoutOutside"
             layout="@layout/layout_outside"
             android:visibility="gone" />
+
+
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

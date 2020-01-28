@@ -1,43 +1,42 @@
 {
   "project_info": {
-    "project_number": "399727759533",
-    "firebase_url": "https://laari-22f79.firebaseio.com",
-    "project_id": "laari-22f79",
-    "storage_bucket": "laari-22f79.appspot.com"
+    "project_number": "1088930075720",
+    "firebase_url": "https://laari-e177c.firebaseio.com",
+    "project_id": "laari-e177c",
+    "storage_bucket": "laari-e177c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:399727759533:android:36243298b59b22fdba7624",
+        "mobilesdk_app_id": "1:1088930075720:android:18b3f665a221012655347d",
         "android_client_info": {
           "package_name": "com.laari.rider"
         }
       },
       "oauth_client": [
         {
-          "client_id": "399727759533-c0ube8isk8rurbni2ljqvpbfdg5552cd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.laari.rider",
-            "certificate_hash": "8ec151c0c035fb9fb06a0906a6fd0bdb2623d6fe"
-          }
-        },
-        {
-          "client_id": "399727759533-ig7f3u4mo5amnua14grru16ap9d1n0lj.apps.googleusercontent.com",
+          "client_id": "1088930075720-705l6ajbon358i7jvl3pincqbdhqgkjl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCVKibZVUNZt3FlCk1wFtijcS_kiNVBjTo"
+          "current_key": "AIzaSyDLhVz0AZnSZMHFYEqPh--EJOkBft4WoIg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "399727759533-ig7f3u4mo5amnua14grru16ap9d1n0lj.apps.googleusercontent.com",
+              "client_id": "1088930075720-705l6ajbon358i7jvl3pincqbdhqgkjl.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1088930075720-3v4at444idmvd672mub7jhvtu7o4lni9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.laari.rider"
+              }
             }
           ]
         }

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/bg_rides_card"
+    android:orientation="vertical">
+
+
+    <TextView
+        style="@style/largeTvBold"
+        android:text="Ride Details"
+        android:textSize="24sp"
+        android:textStyle="normal" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGreyFont" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_boy" />
+
+
+            <TextView
+                android:id="@+id/tvVehicleType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:text="Economy car" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Distance"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:text="2 km" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Time"
+                android:textColor="@color/colorBlack" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:text="15 min" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Fare"
+                android:textColor="@color/colorBlack" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:text="120 rs" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/lightGreyFont" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/bg_unfocused_ride_option"
+            android:drawableRight="@drawable/arrow_down"
+            android:padding="8dp"
+            android:text="Cash" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/bg_unfocused_ride_option"
+            android:padding="6dp"
+            android:text="Apply Coupon" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnRequestRide"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_button_main"
+        android:text="Request Ride"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

@@ -2,35 +2,51 @@ package com.laari.rider.views.activity.registration
 
 import android.os.Bundle
 import android.os.Handler
+import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.laari.rider.HomeBaseActivity
 import com.laari.rider.R
+import com.laari.rider.network.auth.LoginRequest
 import com.laari.rider.utility.setLoggedIn
 import com.laari.rider.utility.toast
+import com.laari.rider.viewmodels.LoginViewModel
 import com.laari.rider.views.activity.MapsActivity
-import com.laari.rider.views.activity.registration.ReferralCodeActivity
+
 import kotlinx.android.synthetic.main.activity_otpverification.*
 import java.util.concurrent.TimeUnit
+import android.provider.Settings.Secure
+import androidx.lifecycle.Observer
+import com.google.firebase.iid.FirebaseInstanceId
+import com.laari.rider.models.RegistrationModel
+import com.laari.rider.views.activity.HomeDashboardActivity
 
 
 class OTPVerificationActivity : HomeBaseActivity() {
 
     var number = ""
     var otp = ""
-    lateinit var firebaseAuthSettings: FirebaseAuthSettings
 
+    lateinit var firebaseAuthSettings: FirebaseAuthSettings
+    private lateinit var viewModel: LoginViewModel
+
+    lateinit var deviceId: String
     lateinit var mCallbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otpverification)
+        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+
+
         FirebaseApp.initializeApp(this)
+        deviceId = FirebaseInstanceId.getInstance().getToken().toString()
 
         val firebaseAuth = FirebaseAuth.getInstance()
         firebaseAuthSettings = firebaseAuth.firebaseAuthSettings
@@ -199,14 +215,14 @@ class OTPVerificationActivity : HomeBaseActivity() {
                 Handler().postDelayed({
                     dismissProgress()
                 }, 4000)
-                if (isUserAvailable()) {
-                    setLoggedIn(this@OTPVerificationActivity, true)
-                    startNewActivity(MapsActivity())
-                    toast("welcome back")
-                } else {
-                    startNewActivity(RegistrationActivity())
-                    toast(getString(R.string.not_a_user))
-                }
+//                if (isUserAvailable()) {
+//                    setLoggedIn(this@OTPVerificationActivity, true)
+//                    startNewActivity(MapsActivity())
+//                    toast("welcome back")
+//                } else {
+//                    startNewActivity(RegistrationActivity())
+//                    toast(getString(R.string.not_a_user))
+//                }
 
             }
 
@@ -257,8 +273,6 @@ class OTPVerificationActivity : HomeBaseActivity() {
         }
 
 
-
-
     }
 
 
@@ -281,19 +295,29 @@ class OTPVerificationActivity : HomeBaseActivity() {
             ) { task ->
                 if (task.isSuccessful) {
                     val user = task.result?.user
+
                     user!!.getIdToken(true)
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
 
-                                if (isUserAvailable()) {
-                                    setLoggedIn(this@OTPVerificationActivity, true)
-                                    dismissProgress()
-                                    startNewActivity(MapsActivity())
-                                    toast("welcome back")
-                                } else {
-                                    startNewActivity(RegistrationActivity())
-                                    toast(getString(R.string.not_a_user))
-                                }
+                                val request = LoginRequest(1, number, "A", deviceId)
+                                val userData = RegistrationModel
+                                userData.number = number
+                                viewModel.loginUser(request)
+                                viewModel.authLiveDate.observe(this, Observer {
+                                    val availability = it.success
+                                    if (availability) {
+                                        setLoggedIn(this@OTPVerificationActivity, true)
+                                        dismissProgress()
+                                        startNewActivity(HomeDashboardActivity())
+                                        toast("welcome back")
+                                    } else {
+                                        startNewActivity(RegistrationActivity())
+                                        toast(getString(R.string.not_a_user))
+                                        dismissProgress()
+                                    }
+                                })
+
                             } else {
                                 dismissProgress()
 
@@ -303,9 +327,6 @@ class OTPVerificationActivity : HomeBaseActivity() {
                 }
             }
     }
-
-
-
 
 
     private fun verifyOtp() {
@@ -335,9 +356,6 @@ class OTPVerificationActivity : HomeBaseActivity() {
             })
     }
 
-    private fun isUserAvailable(): Boolean {
-        //Todo call old or existing user api
-        return false
-    }
+
 
 }

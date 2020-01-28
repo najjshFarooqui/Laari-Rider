@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.libraries.places.api.Places
@@ -26,7 +27,7 @@ class PlacePredictionActivity : AppCompatActivity(), PlacePredictionInterface {
     lateinit var adapter: PlacePredictionAdapter
     lateinit var binding: ActivityPlacePredictionBinding
     private var isSource = true
-    private var actionbarTitle: String ?= null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,17 +36,16 @@ class PlacePredictionActivity : AppCompatActivity(), PlacePredictionInterface {
         binding.handler = this
 
         setSupportActionBar(toolbar)
-      // isSource = intent.getBooleanExtra(ARG_IS_SOURCE, true)
+        isSource = intent.getBooleanExtra(ARG_IS_SOURCE, true)
 
-      // if (isSource)
-      //     supportActionBar?.title = "Enter Pickup Location"
-      // else supportActionBar?.title = "Enter Destination Location"
-        
+        if (isSource) {
+            supportActionBar?.title = "Enter Pickup Location"
+            ivPin.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_location_pin_orange));
+        } else supportActionBar?.title = "Enter Destination Location"
 
 
-        actionbarTitle = intent.getStringExtra("destination")
 
-        supportActionBar?.title = actionbarTitle
+
 
         Places.initialize(applicationContext, getString(R.string.map_api_key))
         placesClient = Places.createClient(this)

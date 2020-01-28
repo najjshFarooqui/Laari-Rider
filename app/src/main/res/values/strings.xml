@@ -81,5 +81,8 @@
     <string name="ride_now">Ride Now</string>
     <string name="_continue">Continue</string>
     <string name="company">Company</string>
+    <string name="searching_nearby_driver">Searching Nearby Driver</string>
+    <string name="cancel">Cancel</string>
+    <string name="auto_rikshaw">Auto Rikshaw</string>
 
 </resources>

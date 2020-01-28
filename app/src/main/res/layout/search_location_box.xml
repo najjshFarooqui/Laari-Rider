@@ -52,8 +52,8 @@
         <TextView
             android:id="@+id/pic_address_tv"
             style="@style/searchTv"
-            android:hint="@string/enter_pickup_location"/>
-<!--            android:onClick="openPlacePredictionCurrent" />-->
+            android:hint="@string/enter_pickup_location"
+            android:onClick="openPlacePredictionCurrent" />
 
         <View
             android:layout_width="match_parent"
@@ -66,8 +66,7 @@
             style="@style/searchTv"
             android:layout_marginTop="16dp"
             android:hint="@string/enter_drop_location"
-            />
-<!--            android:onClick="openPlacePredictionDestination" />-->
+          android:onClick="openPlacePredictionDestination" />
 
     </LinearLayout>
 
